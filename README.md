@@ -2,6 +2,9 @@
 
 A repository of my IPython notebooks from Kaggle.com
 
+https://plsms.github.io/Kaggle/
+
+https://plsms.github.io/kaggle
 
 ---
 
