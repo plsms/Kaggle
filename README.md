@@ -1,6 +1,6 @@
 # Kaggle
 
-A repository of my IPython notebooks from Kaggle.com
+IPython notebooks from Kaggle.com
 
 https://plsms.github.io/Kaggle
 
