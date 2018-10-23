@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title>pandas.Period — pandas 0.23.4 documentation</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8"/><link rel="canonical" href="http://archive.is/7V1dh"/></head><body style="margin:0;background-color:white;width:1024px"><div class="html1" style="width: 1024px;text-align: left;overflow-x: auto;overflow-y: auto; background-color: rgb(17, 17, 17);position: relative;min-height: 1569px;; z-index: 0"><div class="html" style="text-align:left;overflow-x:visible;overflow-y:visible;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="body" style="vertical-align:bottom;min-height:1569px;text-align:left;font-family:Arial, sans-serif;font-size:100%;color:rgb(85, 85, 85);overflow-x:visible;overflow-y:visible;margin: 0px; padding: 0px; "><div style="text-align:left;position:absolute;left:1px;bottom:2px;background-color: rgb(230, 230, 230); z-index:102;color:black;font-size:80%;width:auto;white-space:nowrap;display:none;border-width: 1px; border-style: solid; margin: 0px; padding: 2px 8px; border-color: rgb(149, 149, 149); "></div>
+<div style="text-align:left;width:100%;background-color: rgb(107, 168, 30); line-height:32px;color:rgb(255, 255, 255);text-shadow:rgb(68, 68, 68) 0px 1px 0px;font-size:0.9em;">
+<h3 style="text-align:left;display:none;">Navigation</h3>
+<ul style="text-align:left;list-style: none outside none; margin: 0px; padding: 0px 0px 0px 10px; ">
+<li style="text-align:left;display:inline;float:right;margin-right:10px;">
+<a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/genindex.html" title="General Index" style="text-align:left;text-decoration:none;color:rgb(226, 243, 204);">index</a></li>
+<li style="text-align:left;display:inline;float:right;margin-right:5px;">
+<a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/py-modindex.html" title="Python Module Index" style="text-align:left;text-decoration:none;color:rgb(226, 243, 204);">modules</a>
+|</li>
+<li style="text-align:left;display:inline;float:right;margin-right:5px;">
+<a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.day.html" title="pandas.Period.day" style="text-align:left;text-decoration:none;color:rgb(226, 243, 204);">next</a>
+|</li>
+<li style="text-align:left;display:inline;float:right;margin-right:5px;">
+<a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.PeriodIndex.start_time.html" title="pandas.PeriodIndex.start_time" style="text-align:left;text-decoration:none;color:rgb(226, 243, 204);">previous</a>
+|</li>
+<li style="text-align:left;display:inline;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/index.html" style="text-align:left;text-decoration:none;color:rgb(226, 243, 204);">pandas 0.23.4 documentation</a>
+»</li>
+<li style="text-align:left;display:inline;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html" style="text-align:left;text-decoration:none;color:rgb(226, 243, 204);">API Reference</a>
+»</li>
+</ul>
+</div>
+<div style="text-align:left;">
+<div style="text-align:left;">
+<div style="text-align:left;background-color: rgb(238, 238, 238); ">
+<div style="text-align:left;word-wrap:break-word;font-size:0.75em;line-height:1.5em;width:270px;float:left;background-color: rgb(238, 238, 238); margin: 0px; ">
+<h3 style="text-align:left;font-family:Arial, sans-serif;color:rgb(34, 34, 34);font-size:1.2em;font-weight:normal;background-color: rgb(221, 221, 221); text-shadow:white 1px 1px 0px;margin: 20px 0px 0px; padding: 5px 10px; ">Table Of Contents</h3>
+<ul style="text-align:left;color:rgb(0, 0, 0);list-style: none outside none; margin: 10px 20px; padding: 0px; ">
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/whatsnew.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">What’s New</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/install.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Installation</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/contributing.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Contributing to pandas</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/overview.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Package overview</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/10min.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">10 Minutes to pandas</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/tutorials.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Tutorials</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/cookbook.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Cookbook</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/dsintro.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Intro to Data Structures</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/basics.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Essential Basic Functionality</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/text.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Working with Text Data</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/options.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Options and Settings</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/indexing.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Indexing and Selecting Data</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/advanced.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">MultiIndex / Advanced Indexing</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/computation.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Computational tools</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/missing_data.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Working with missing data</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/groupby.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Group By: split-apply-combine</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/merging.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Merge, join, and concatenate</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/reshaping.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Reshaping and Pivot Tables</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/timeseries.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Time Series / Date functionality</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/timedeltas.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Time Deltas</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/categorical.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Categorical Data</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/visualization.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Visualization</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/style.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Styling</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/io.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">IO Tools (Text, CSV, HDF5, …)</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/enhancingperf.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Enhancing Performance</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/sparse.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Sparse data structures</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/gotchas.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Frequently Asked Questions (FAQ)</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/r_interface.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">rpy2 / R interface</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/ecosystem.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">pandas Ecosystem</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/comparison_with_r.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Comparison with R / R libraries</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Comparison with SQL</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/comparison_with_sas.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Comparison with SAS</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/comparison_with_stata.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Comparison with Stata</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">API Reference</a><ul style="text-align:left;color:rgb(0, 0, 0);list-style: square outside none; margin: 0px 20px; padding: 0px; ">
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23input-output" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Input/Output</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23general-functions" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">General functions</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23series" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Series</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23dataframe" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">DataFrame</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23panel" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Panel</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23index" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Index</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23numeric-index" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Numeric Index</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23categoricalindex" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">CategoricalIndex</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23intervalindex" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">IntervalIndex</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23multiindex" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">MultiIndex</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23datetimeindex" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">DatetimeIndex</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23timedeltaindex" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">TimedeltaIndex</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23periodindex" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">PeriodIndex</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23scalars" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Scalars</a><ul style="text-align:left;color:rgb(0, 0, 0);list-style: square outside none; margin: 0px 20px; padding: 0px; ">
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23period" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Period</a><ul style="text-align:left;color:rgb(0, 0, 0);list-style: square outside none; margin: 0px 20px; padding: 0px; ">
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.html%23" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">pandas.Period</a></li>
+</ul>
+</li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23id32" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Attributes</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23id33" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Methods</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23timestamp" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Timestamp</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23properties" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Properties</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23id34" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Methods</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23interval" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Interval</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23id35" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Properties</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23timedelta" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Timedelta</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23id36" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Properties</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23id37" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Methods</a></li>
+</ul>
+</li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23frequencies" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Frequencies</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23window" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Window</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23groupby" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">GroupBy</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23resampling" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Resampling</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23style" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Style</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23id43" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Plotting</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23general-utility-functions" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">General utility functions</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html%23extensions" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Extensions</a></li>
+</ul>
+</li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/developer.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Developer</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/internals.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Internals</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/extending.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Extending Pandas</a></li>
+<li style="text-align:left;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/release.html" style="text-align:left;text-decoration:none;color:rgb(68, 68, 68);">Release Notes</a></li>
+</ul>
+<h3 style="text-align:left;font-family:Arial, sans-serif;color:rgb(34, 34, 34);font-size:1.2em;font-weight:normal;background-color: rgb(221, 221, 221); text-shadow:white 1px 1px 0px;margin: 1.5em 0px 0px; padding: 5px 10px; ">Search</h3>
+<form action="https://archive.today/7V1dh#" method="post" style="text-align:left;margin-top:10px;">
+<input name="q" size="18" value="" style="text-align:left;font-family:sans-serif;font-size:1em;margin-left:20px;border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204); "/>
+<input type="submit" value="Go" style="font-family:sans-serif;font-size:1em;border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204); "/>
+<input type="hidden" name="check_keywords" value="yes" style="text-align:left;font-family:sans-serif;font-size:1em;border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204); "/>
+<input type="hidden" name="area" value="default" style="text-align:left;font-family:sans-serif;font-size:1em;border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204); "/>
+</form>
+<div style="margin-top:10px;margin-bottom:10px;text-align:left;color:rgb(136, 136, 136);font-size:90%;padding: 5px 20px; ">
+Enter search terms or a module, class or function name. </div>
+</div>
+<div style="text-align:left;width:100%;">
+<div style="text-align:left;min-width:540px;max-width:800px;margin: 0px 0px 0px 270px; ">
+<div style="text-align:left;min-width:450px;max-width:800px;background-color: rgb(255, 255, 255); color:rgb(62, 67, 73);font-size:0.9em;padding: 0px 30px 30px; ">
+<div style="text-align:left;">
+<h1 style="text-align:left;font-family:Arial, sans-serif;background-color: rgb(190, 212, 235); font-weight:normal;color:rgb(33, 34, 36);text-shadow:white 0px 1px 0px;border-top-color:white;font-size:200%;border-width: 20px medium medium; border-style: solid none none; margin: 0px 0px 10px; padding: 5px 0px 5px 10px; ">pandas.Period<a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.html%23pandas-period" title="Permalink to this headline" style="text-align:left;visibility:hidden;color:rgb(198, 15, 15);font-size:0.8em;text-decoration:none;padding: 0px 4px; ">¶</a></h1>
+<dl style="text-align:left;margin-bottom:15px;">
+<dt style="text-align:left;">
+<em style="text-align:left;">class
+</em><code style="text-align:left;background-color: transparent; ">pandas.</code><code style="text-align:left;background-color: transparent; font-weight:bold;font-size:1.2em;">Period</code><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.html%23pandas.Period" title="Permalink to this definition" style="text-align:left;visibility:hidden;color:rgb(198, 15, 15);font-size:0.8em;text-decoration:none;padding: 0px 4px; ">¶</a></dt>
+<dd style="text-align:left;margin-top:3px;margin-bottom:10px;margin-left:30px;-webkit-hyphens:auto;line-height:1.5em;"><div style="margin-bottom:14px;text-align:left;margin-top:0px;-webkit-hyphens:auto;line-height:1.5em;">Represents a period of time</div>
+<table frame="void" rules="none" style="text-align:left;margin-bottom:10px;border-collapse:separate;-webkit-border-horizontal-spacing:10px;-webkit-border-vertical-spacing:10px;margin-left:1px;border-width: 0px; border-style: none; border-color: white; ">
+<colgroup span="1" style="text-align:left;"><col span="1" style="text-align:left;-webkit-hyphens:manual;"></col>
+<col span="1" style="text-align:left;"></col>
+</colgroup><tbody style="vertical-align:top;text-align:left;">
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><th style="color:rgb(62, 67, 73);text-align:left;vertical-align:middle;line-height:normal;max-width:none;font-weight:bold;-webkit-hyphens:manual;white-space:nowrap;background-color: rgb(238, 238, 238); border-width: 0px; border-style: none; padding: 1px 8px 1px 5px; border-color: white; ">Parameters:</th><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px; border-style: none; padding: 1px 8px 1px 5px; border-color: white; "><div style="-webkit-hyphens:auto;line-height:1.5em;font-style:italic;margin: 0px; "><strong style="font-style:normal;">value</strong>
+: Period or compat.string_types, default None</div>
+<blockquote style="-webkit-hyphens:auto;padding-left:30px;border-width: medium; border-style: none; margin: 0em 0em 0.3em; ">
+<div><div style="-webkit-hyphens:auto;line-height:1.5em;margin: 0px; ">The time period represented (e.g., ‘4Q2005’)</div>
+</div></blockquote>
+<div style="-webkit-hyphens:auto;line-height:1.5em;font-style:italic;margin: 0px; "><strong style="font-style:normal;">freq</strong>
+: str, default None</div>
+<blockquote style="-webkit-hyphens:auto;padding-left:30px;border-width: medium; border-style: none; margin: 0em 0em 0.3em; ">
+<div><div style="-webkit-hyphens:auto;line-height:1.5em;margin: 0px; ">One of pandas period strings or corresponding objects</div>
+</div></blockquote>
+<dl style="margin-bottom:15px;">
+<dt><strong>year</strong>
+<span>:</span>
+<span style="font-style:oblique;">int, default None</span></dt>
+<dd style="margin-top:3px;margin-bottom:10px;margin-left:30px;-webkit-hyphens:auto;line-height:1.5em;"></dd>
+<dt><strong>month</strong>
+<span>:</span>
+<span style="font-style:oblique;">int, default 1</span></dt>
+<dd style="margin-top:3px;margin-bottom:10px;margin-left:30px;-webkit-hyphens:auto;line-height:1.5em;"></dd>
+<dt><strong>quarter</strong>
+<span>:</span>
+<span style="font-style:oblique;">int, default None</span></dt>
+<dd style="margin-top:3px;margin-bottom:10px;margin-left:30px;-webkit-hyphens:auto;line-height:1.5em;"></dd>
+<dt><strong>day</strong>
+<span>:</span>
+<span style="font-style:oblique;">int, default 1</span></dt>
+<dd style="margin-top:3px;margin-bottom:10px;margin-left:30px;-webkit-hyphens:auto;line-height:1.5em;"></dd>
+<dt><strong>hour</strong>
+<span>:</span>
+<span style="font-style:oblique;">int, default 0</span></dt>
+<dd style="margin-top:3px;margin-bottom:10px;margin-left:30px;-webkit-hyphens:auto;line-height:1.5em;"></dd>
+<dt><strong>minute</strong>
+<span>:</span>
+<span style="font-style:oblique;">int, default 0</span></dt>
+<dd style="margin-top:3px;margin-bottom:10px;margin-left:30px;-webkit-hyphens:auto;line-height:1.5em;"></dd>
+<dt><strong>second</strong>
+<span>:</span>
+<span style="font-style:oblique;">int, default 0</span></dt>
+<dd style="margin-top:3px;margin-bottom:10px;margin-left:30px;-webkit-hyphens:auto;line-height:1.5em;"></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<div style="margin-bottom:14px;text-align:left;margin-top:30px;font-weight:bold;border-bottom-color:rgb(201, 201, 201);-webkit-hyphens:auto;line-height:1.5em;border-width: medium medium 1px; border-style: none none solid; ">Attributes</div>
+<table style="text-align:left;margin-bottom:10px;border-collapse:collapse;border-width: 0px; border-style: none; border-color: white; ">
+<colgroup span="1" style="text-align:left;">
+<col span="1" style="width:10%;text-align:left;"></col>
+<col span="1" style="width:90%;text-align:left;"></col>
+</colgroup>
+<tbody style="vertical-align:top;text-align:left;">
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.day.html%23pandas.Period.day" title="pandas.Period.day" style="color:rgb(0, 91, 129);text-decoration:none;"><code style="background-color: transparent; font-weight:bold;"><span style="-webkit-hyphens:none;">day</span></code></a></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); ">Get day of the month that a Period falls on.</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.dayofweek.html%23pandas.Period.dayofweek" title="pandas.Period.dayofweek" style="color:rgb(0, 91, 129);text-decoration:none;"><code style="background-color: transparent; font-weight:bold;"><span style="-webkit-hyphens:none;">dayofweek</span></code></a></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); ">Return the day of the week.</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.dayofyear.html%23pandas.Period.dayofyear" title="pandas.Period.dayofyear" style="color:rgb(0, 91, 129);text-decoration:none;"><code style="background-color: transparent; font-weight:bold;"><span style="-webkit-hyphens:none;">dayofyear</span></code></a></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); ">Return the day of the year.</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.days_in_month.html%23pandas.Period.days_in_month" title="pandas.Period.days_in_month" style="color:rgb(0, 91, 129);text-decoration:none;"><code style="background-color: transparent; font-weight:bold;"><span style="-webkit-hyphens:none;">days_in_month</span></code></a></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); ">Get the total number of days in the month that this period falls on.</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.daysinmonth.html%23pandas.Period.daysinmonth" title="pandas.Period.daysinmonth" style="color:rgb(0, 91, 129);text-decoration:none;"><code style="background-color: transparent; font-weight:bold;"><span style="-webkit-hyphens:none;">daysinmonth</span></code></a></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); ">Get the total number of days of the month that the Period falls in.</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.hour.html%23pandas.Period.hour" title="pandas.Period.hour" style="color:rgb(0, 91, 129);text-decoration:none;"><code style="background-color: transparent; font-weight:bold;"><span style="-webkit-hyphens:none;">hour</span></code></a></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); ">Get the hour of the day component of the Period.</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.minute.html%23pandas.Period.minute" title="pandas.Period.minute" style="color:rgb(0, 91, 129);text-decoration:none;"><code style="background-color: transparent; font-weight:bold;"><span style="-webkit-hyphens:none;">minute</span></code></a></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); ">Get minute of the hour component of the Period.</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.second.html%23pandas.Period.second" title="pandas.Period.second" style="color:rgb(0, 91, 129);text-decoration:none;"><code style="background-color: transparent; font-weight:bold;"><span style="-webkit-hyphens:none;">second</span></code></a></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); ">Get the second component of the Period.</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.start_time.html%23pandas.Period.start_time" title="pandas.Period.start_time" style="color:rgb(0, 91, 129);text-decoration:none;"><code style="background-color: transparent; font-weight:bold;"><span style="-webkit-hyphens:none;">start_time</span></code></a></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); ">Get the Timestamp for the start of the period.</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.week.html%23pandas.Period.week" title="pandas.Period.week" style="color:rgb(0, 91, 129);text-decoration:none;"><code style="background-color: transparent; font-weight:bold;"><span style="-webkit-hyphens:none;">week</span></code></a></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); ">Get the week of the year on the given Period.</td>
+</tr>
+</tbody>
+</table>
+<table style="text-align:left;margin-bottom:10px;border-collapse:collapse;border-width: 0px; border-style: none; border-color: white; ">
+<colgroup span="1" style="text-align:left;">
+<col span="1" style="width:62%;text-align:left;"></col>
+<col span="1" style="width:38%;text-align:left;"></col>
+</colgroup>
+<tbody style="vertical-align:top;text-align:left;">
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><strong>end_time</strong></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "> </td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><strong>freq</strong></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "> </td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><strong>freqstr</strong></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "> </td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><strong>is_leap_year</strong></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "> </td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><strong>month</strong></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "> </td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><strong>ordinal</strong></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "> </td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><strong>quarter</strong></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "> </td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><strong>qyear</strong></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "> </td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><strong>weekday</strong></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "> </td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><strong>weekofyear</strong></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "> </td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><strong>year</strong></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "> </td>
+</tr>
+</tbody>
+</table>
+<div style="margin-bottom:14px;text-align:left;margin-top:30px;font-weight:bold;border-bottom-color:rgb(201, 201, 201);-webkit-hyphens:auto;line-height:1.5em;border-width: medium medium 1px; border-style: none none solid; ">Methods</div>
+<table style="text-align:left;margin-bottom:10px;border-collapse:collapse;border-width: 0px; border-style: none; border-color: white; ">
+<colgroup span="1" style="text-align:left;">
+<col span="1" style="width:10%;text-align:left;"></col>
+<col span="1" style="width:90%;text-align:left;"></col>
+</colgroup>
+<tbody style="vertical-align:top;text-align:left;">
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.asfreq.html%23pandas.Period.asfreq" title="pandas.Period.asfreq" style="color:rgb(0, 91, 129);text-decoration:none;"><code style="background-color: transparent; font-weight:bold;"><span style="-webkit-hyphens:none;">asfreq</span></code></a></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); ">Convert Period to desired frequency, either at the start or end of the interval</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.strftime.html%23pandas.Period.strftime" title="pandas.Period.strftime" style="color:rgb(0, 91, 129);text-decoration:none;"><code style="background-color: transparent; font-weight:bold;"><span style="-webkit-hyphens:none;">strftime</span></code></a></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); ">Returns the string representation of the
+<a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.html%23pandas.Period" title="pandas.Period" style="color:rgb(0, 91, 129);text-decoration:none;"><code style="background-color: transparent; font-weight:bold;"><span style="-webkit-hyphens:none;">Period</span></code></a>, depending on the selected
+<code><span style="-webkit-hyphens:none;">fmt</span></code>.</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.to_timestamp.html%23pandas.Period.to_timestamp" title="pandas.Period.to_timestamp" style="color:rgb(0, 91, 129);text-decoration:none;"><code style="background-color: transparent; font-weight:bold;"><span style="-webkit-hyphens:none;">to_timestamp</span></code></a></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); ">Return the Timestamp representation of the Period at the target frequency at the specified end (how) of the Period</td>
+</tr>
+</tbody>
+</table>
+<table style="text-align:left;margin-bottom:10px;border-collapse:collapse;border-width: 0px; border-style: none; border-color: white; ">
+<colgroup span="1" style="text-align:left;">
+<col span="1" style="width:41%;text-align:left;"></col>
+<col span="1" style="width:59%;text-align:left;"></col>
+</colgroup>
+<tbody style="vertical-align:top;text-align:left;">
+<tr style="text-align:left;vertical-align:middle;line-height:normal;white-space:normal;max-width:none;background-color: rgb(245, 245, 245); border-width: medium; border-style: none; padding: 0.5em; border-color: white; "><td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "><strong>now</strong></td>
+<td style="color:rgb(62, 67, 73);vertical-align:middle;line-height:normal;white-space:normal;max-width:none;text-align:left;border-width: 0px 0px 1px; border-style: none none solid; padding: 1px 8px 1px 5px; border-color: white white rgb(170, 170, 170); "> </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div>
+</div>
+</div>
+</div>
+<div style="text-align:left;clear:both;"></div>
+</div>
+</div>
+</div>
+<div style="text-align:left;width:100%;background-color: rgb(107, 168, 30); line-height:32px;color:rgb(255, 255, 255);text-shadow:rgb(68, 68, 68) 0px 1px 0px;font-size:0.9em;">
+<h3 style="text-align:left;display:none;">Navigation</h3>
+<ul style="text-align:left;list-style: none outside none; margin: 0px; padding: 0px 0px 0px 10px; ">
+<li style="text-align:left;display:inline;float:right;margin-right:10px;">
+<a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/genindex.html" title="General Index" style="text-align:left;text-decoration:none;color:rgb(226, 243, 204);">index</a></li>
+<li style="text-align:left;display:inline;float:right;margin-right:5px;">
+<a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/py-modindex.html" title="Python Module Index" style="text-align:left;text-decoration:none;color:rgb(226, 243, 204);">modules</a>
+|</li>
+<li style="text-align:left;display:inline;float:right;margin-right:5px;">
+<a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.day.html" title="pandas.Period.day" style="text-align:left;text-decoration:none;color:rgb(226, 243, 204);">next</a>
+|</li>
+<li style="text-align:left;display:inline;float:right;margin-right:5px;">
+<a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.PeriodIndex.start_time.html" title="pandas.PeriodIndex.start_time" style="text-align:left;text-decoration:none;color:rgb(226, 243, 204);">previous</a>
+|</li>
+<li style="text-align:left;display:inline;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/index.html" style="text-align:left;text-decoration:none;color:rgb(226, 243, 204);">pandas 0.23.4 documentation</a>
+»</li>
+<li style="text-align:left;display:inline;"><a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/api.html" style="text-align:left;text-decoration:none;color:rgb(226, 243, 204);">API Reference</a>
+»</li>
+</ul>
+</div>
+
+<a href="http://archive.today/o/7V1dh/https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Period.html%23" style="color:rgb(0, 91, 129);text-decoration:none;text-align:center;font-weight:bold;position:absolute;bottom:60px;right:40px;display:none;">Scroll To Top</a>
+
+
+</div></div></div></body></html>
