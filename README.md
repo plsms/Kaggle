@@ -2,4 +2,4 @@
 
 IPython notebooks from Kaggle.com
 
-https://plsms.github.io/kaggle.html
+https://plsms.github.io/kaggle
